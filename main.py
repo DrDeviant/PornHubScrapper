@@ -59,7 +59,7 @@ def get_more_info_of_video(id):
     headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
     "Content-Type": "application/x-www-form-urlencoded"}
-    req = requests.get(VIEW_VIDEO_PATH + id, headers=headers)
+    req = requests.get("https://www.google.com/search?q=prib", headers=headers)
     
     with open("//home//pi//PornHubScrapper//result.txt", "w", encoding="utf-8") as ss:
         ss.write(req.text)
