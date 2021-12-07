@@ -58,9 +58,7 @@ def get_list_of_categories(list_of_categories):
 
 def get_more_info_of_video(id):
     req = requests.get(VIEW_VIDEO_PATH + id)
-    with open("C://Users//Адиль//Desktop//Job//result.txt", "r", encoding="utf-8") as ss:
-        html = ss.read()
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(req.content, 'html.parser')
     votesUp = soup.find("span", {"class": "votesUp"}).get('data-rating')
     votesDown = soup.find("span", {"class": "votesDown"}).get('data-rating')
     author = soup.find("div",{"class": "userInfo"}).find("span",{"class":"usernameBadgesWrapper"}).get_text()
