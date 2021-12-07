@@ -57,7 +57,7 @@ def get_list_of_categories(list_of_categories):
 
 def get_more_info_of_video(id):
     req = requests.get(VIEW_VIDEO_PATH + id)
-    with open("result.txt", "w", encoding="utf-8") as ss:
+    with open("//home//pi//PornHubScrapper//result.txt", "w", encoding="utf-8") as ss:
         ss.write(req.text)
     soup = BeautifulSoup(req.content, 'html.parser')
     votesUp = soup.find("span", {"class": "votesUp"}).get('data-rating')
