@@ -1,5 +1,4 @@
 
-from os import startfile
 import pornhub_api
 from pornhub_api import PornhubApi
 from pornhub_api.backends.aiohttp import AioHttpBackend
