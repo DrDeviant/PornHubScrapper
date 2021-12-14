@@ -1,5 +1,3 @@
-
-from os import startfile
 import time
 from fake_useragent import UserAgent
 import pornhub_api
