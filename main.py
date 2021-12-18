@@ -82,7 +82,7 @@ def get_list_of_categories(list_of_categories):
 def get_more_info_of_video(id):
     op = webdriver.ChromeOptions()
     op.add_argument('--headless')
-    driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver',options=op)
+    driver = webdriver.Chrome(executable_path = '/usr/lib/chromium-browser/chromedriver',options=op)
     driver.get(VIEW_VIDEO_PATH + id)
     pageSource = driver.page_source
     fileToWrite = open("page_source.txt", "w", encoding="utf-8")
