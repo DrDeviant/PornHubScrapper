@@ -83,7 +83,8 @@ def get_more_info_of_video(id):
     op = webdriver.ChromeOptions()
     op.add_argument('--headless')
     op.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(executable_path = '/usr/lib/chromium-browser/chromedriver',options=op)
+    s=Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=s, options=op)
     driver.get(VIEW_VIDEO_PATH + id)
     pageSource = driver.page_source
     fileToWrite = open("page_source.txt", "w", encoding="utf-8")
