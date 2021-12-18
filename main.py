@@ -1,3 +1,32 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@foopy02 
+foopy02
+/
+PornHubScrapper
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+PornHubScrapper/main.py /
+@foopy02
+foopy02 Update main.py
+Latest commit 4988efd 1 minute ago
+ History
+ 1 contributor
+121 lines (112 sloc)  4.34 KB
+   
 import time
 from fake_useragent import UserAgent
 import pornhub_api
@@ -35,7 +64,8 @@ def start():
             counter = counter + 1
             try:
                 pageSource, upVotes, downVotes, author,svg = get_more_info_of_video(vid.video_id)
-            except:
+            except Exception as e:
+                print(e)
                 continue
             video = Video(
                 id=vid.video_id,
@@ -55,7 +85,8 @@ def start():
             list_of_videos.append(video)
             try:
                 get_data_tag_time_n_name(pageSource, video.id, video.length, video.author)
-            except:
+            except Exception as e:
+                print(e, "get_data_tag")
                 continue
                 pass
             if video.url == "https://rt.pornhub.com/view_video.php?viewkey=ph585c74218308a":
