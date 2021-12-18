@@ -15,6 +15,7 @@ import pprint
 from bs4 import BeautifulSoup
 import urllib.request
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
  
 VIEW_VIDEO_PATH = "https://rt.pornhub.com/view_video.php?viewkey="
