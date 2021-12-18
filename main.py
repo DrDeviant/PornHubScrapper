@@ -89,7 +89,7 @@ def get_more_info_of_video(id):
     fileToWrite = open("page_source.txt", "w", encoding="utf-8")
     fileToWrite.write(pageSource)
     fileToWrite.close()
-    soup = BeautifulSoup(pageSource)
+    soup = BeautifulSoup(pageSource,"html.parser")
     votesUp = soup.find("span", {"class": "votesUp"}).get('data-rating')
     votesDown = soup.find("span", {"class": "votesDown"}).get('data-rating')
     author = soup.find("div",{"class": "userInfo"}).find("div",{"class":"usernameWrap clearfix"}).get_text()
