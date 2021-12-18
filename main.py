@@ -95,6 +95,7 @@ def get_more_info_of_video(id):
     votesDown = soup.find("span", {"class": "votesDown"}).get('data-rating')
     author = soup.find("div",{"class": "userInfo"}).find("div",{"class":"usernameWrap clearfix"}).get_text()
     svg = soup.find("div", {"class": "mgp_hotspots mgp_visible"}).find("polygon").get('points')
+    print(votesUp, author)
     return pageSource, int(votesUp), int(votesDown), author.replace("\n",''),svg
 
 def convert_to_time(length):
