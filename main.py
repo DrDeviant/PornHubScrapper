@@ -82,6 +82,7 @@ def get_list_of_categories(list_of_categories):
 def get_more_info_of_video(id):
     op = webdriver.ChromeOptions()
     op.add_argument('--headless')
+    op.add_argument('--disable-gpu')
     driver = webdriver.Chrome(executable_path = '/usr/lib/chromium-browser/chromedriver',options=op)
     driver.get(VIEW_VIDEO_PATH + id)
     pageSource = driver.page_source
@@ -105,6 +106,8 @@ def convert_to_time(length):
 def get_data_tag_time_n_name(pageSource, id, length, author):
     soup = BeautifulSoup(pageSource,"html.parser")
     all_tags = soup.find_all("div", {"class": "mgp_actionTag"})
+    print("in get_data")
+    print(all_tags, "empty")
     for tag in all_tags:
             dataTimeLine= float(tag.get('style').split(';')[0].split(':')[1].replace("%",''))
             tag = ActionTag(
