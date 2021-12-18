@@ -109,7 +109,9 @@ def get_data_tag_time_n_name(pageSource, id, length, author):
                 dataTagName=tag.get('data-tag'),
                 dataTagTime=length * dataTimeLine / 100
             )
+            print(tag.__dict__)
             database.save_to_db(tag.__dict__)
+            print("saved")
 
 #Possible ordering words: #mostviewed, newest, rating, featured
 #weekly, monthly, alltime
